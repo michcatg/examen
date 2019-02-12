@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use DB;
 use Illuminate\Http\Request;
 use App\empleado;
 use App\detalleEmpleado;
@@ -14,7 +14,8 @@ class EmpleadoController extends Controller
      */
     public function index()
     {
-        return empleado::with('detalleEmpleado')->get();
+        $empleados= empleado::with('detalleEmpleado')->get();
+        return response()->json($empleados);
     }
 
     /**
@@ -35,7 +36,7 @@ class EmpleadoController extends Controller
      */
     public function store(Request $request)
     {
-		 try{
+		try{
 			DB::beginTransaction();
 				$empleado = new empleado;
 				$empleado->nombre = $request ->nombre;
@@ -47,9 +48,20 @@ class EmpleadoController extends Controller
 				$detalleEmpleado->fecha_nacimiento = $request->fecha_nacimiento;
 				$detalleEmpleado->ingresos_anuales = $request->ingresos_anuales;
 				$detalleEmpleado->save();
+		 
+				
 			DB::commit();
+			//return Response::json($response);
+			//return $empleado;
+			return 'exito';
 		}catch(\Exception $e){       
-			DB::rollback();
+			//DB::rollback();
+			$response = array(
+					'status' => 'successs',
+					'msg' => $e->getMessage(),
+				);
+			//return 'falla';
+			return $e->getMessage();
 		}
     }
 
@@ -62,7 +74,8 @@ class EmpleadoController extends Controller
     public function show($id)
     {
         //return empleado::where('empleado_id',$id)->with('detalleEmpleado')->get();
-        return empleado::with('detalleEmpleado')->where('empleado_id',$id)->get();
+		$empleado=empleado::with('detalleEmpleado')->where('empleado_id',$id)->get();
+        return response()->json($empleado);
     }
 
     /**

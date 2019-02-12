@@ -39,4 +39,13 @@ class empleado extends Model
     {
         return $this->hasOne('App\DetalleEmpleado', 'empleado_id', 'empleado_id');
     }
+	
+	public function setUpdatedAt($value)
+    {
+        
+    }
+	public function setCreatedAt($value)
+    {
+        
+    }
 }

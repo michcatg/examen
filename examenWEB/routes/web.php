@@ -15,3 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/registro', function(){
+	return view('registro');
+});
+
+Route::get('/consultaEmpleado',function(){
+	return view ('consultaEmpleados');
+});

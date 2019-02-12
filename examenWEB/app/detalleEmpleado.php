@@ -38,7 +38,7 @@ class detalleEmpleado extends Model
      */
     protected $fillable = [ 'ingresos_anuales'];
 	protected $dates = ['fecha_nacimiento'];
-	protected $dateFormat = 'd-m-Y';
+	protected $dateFormat = 'Y-m-d';
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -46,5 +46,14 @@ class detalleEmpleado extends Model
     public function empleado()
     {
         return $this->belongsTo('App\Empleado', null, 'empleado_id');
+    }
+	
+	public function setUpdatedAt($value)
+    {
+        
+    }
+	public function setCreatedAt($value)
+    {
+        
     }
 }
