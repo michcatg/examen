@@ -19,6 +19,6 @@ Route::get('/registro', function(){
 	return view('registro');
 });
 
-Route::get('/consultaEmpleado',function(){
-	return view ('consultaEmpleados');
+Route::get('/consultaEmpleado', function(){
+	return view('consultaEmpleados');
 });

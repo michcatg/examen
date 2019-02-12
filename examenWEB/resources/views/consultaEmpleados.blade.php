@@ -26,7 +26,6 @@
 				<li><a href="#">Home</a></li>
 				<li class="active"><a href="registro">Registro de empleado</a></li>
 				<li><a href="consultaEmpleado">Consulta empleado</a></li> 
-				<li><a href="listaEmpleados">Lista de todos los empleados</a></li> 
 			  </ul>
 			</div>
 		  </div>
@@ -69,51 +68,6 @@
 		<script>
 			
 			
-			$('#listaEmpleados').on('click',function(e){
-				
-				$.ajaxSetup({
-				  headers: {  'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')  }
-				});
-				
-				$.ajax({
-					url       : "empleados/",
-					type    : 'GET' ,
-					dataType: 'json',
-					success:function(data) {
-						$('.contenido').html(data.responseText);
-					},
-					error:function(jQXHR, textStatus, errorThrown) {
-						console.log(response.status);
-						$('.contenido').append('Error al consultar lista de empleados');
-					}
-				  }); 
-			  }); 
-
-				
-				$('#registroEmpleados').submit(function( event ) {
-				   $.ajaxSetup({
-					  headers: { 'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content') }
-				  });
-				  var empleadoID = $('#empleado_id').val();
-				  if(empleadoID){
-					$.ajax({
-					  url: '{{ url("api/empleados") }}/'+encodeURI(empleadoID),
-					  type: "GET",
-					  dataType: "json",
-					  contentType: 'application/json',
-					  success:function(data) {
-						$('.contenido').html(data.responseText);
-					  },
-					  error:function(jQXHR, textStatus, errorThrown) {
-						//console.log(jQXHR);
-						//console.log(textStatus);
-						//console.log(errorThrown);
-						console.log($.parseJSON(err).msg);
-						$('.contenido').append('Error al consultar datos del empleado');
-					  }
-					});
-				  }
-				 });
 		</script>
 	</body>
 </html>
