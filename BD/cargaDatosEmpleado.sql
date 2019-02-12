@@ -14,12 +14,14 @@ insert into empleado (nombre,apellido_paterno,apellido_materno)
     
     
 insert into detalle_empleado (empleado_id, fecha_nacimiento,ingresos_anuales)
-	values (1,'11-07-1995',12000);
+	values (1,STR_TO_DATE('11-07-1995', '%d-%m-%Y'),12000);
 insert into detalle_empleado (empleado_id, fecha_nacimiento,ingresos_anuales)
-	values (2,'03-03-1990',20000.50);
+	values (2,STR_TO_DATE('03-03-1990', '%d-%m-%Y'),20000.50);
 insert into detalle_empleado (empleado_id, fecha_nacimiento,ingresos_anuales)
-	values (3,'29-01-1985',25000);
+	values (3,STR_TO_DATE('29-01-1985', '%d-%m-%Y'),25000);
 insert into detalle_empleado (empleado_id, fecha_nacimiento,ingresos_anuales)
-	values (4,'15-02-1994',25000);
+	values (4,STR_TO_DATE('15-02-1994', '%d-%m-%Y'),25000);
 insert into detalle_empleado (empleado_id, fecha_nacimiento,ingresos_anuales)
-	values (5,'22-06-1990',30000);
+	values (5,STR_TO_DATE('22-06-1990', '%d-%m-%Y'),30000);
+    
+    
