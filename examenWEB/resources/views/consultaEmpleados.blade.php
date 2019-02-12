@@ -24,8 +24,8 @@
 			<div class="collapse navbar-collapse" id="myNavbar">
 			  <ul class="nav navbar-nav">
 				<li><a href="#">Home</a></li>
-				<li class="active"><a href="registro">Registro de empleado</a></li>
-				<li><a href="consultaEmpleado">Consulta empleado</a></li> 
+				<li ><a href="registro">Registro de empleado</a></li>
+				<li class="active"><a href="consultaEmpleado">Consulta empleado</a></li> 
 			  </ul>
 			</div>
 		  </div>

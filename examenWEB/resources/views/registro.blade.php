@@ -26,7 +26,6 @@
 				<li><a href="#">Home</a></li>
 				<li class="active"><a href="registro">Registro de empleado</a></li>
 				<li><a href="consultaEmpleado">Consulta empleado</a></li> 
-				<li><a href="listaEmpleados">Lista de todos los empleados</a></li> 
 			  </ul>
 			</div>
 		  </div>
